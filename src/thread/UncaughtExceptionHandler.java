@@ -14,6 +14,8 @@ public class UncaughtExceptionHandler {
         System.out.println(Thread.getDefaultUncaughtExceptionHandler());
         Thread t = new Thread(() -> {
             int a = 1 / 0;
+
+//            Thread.sleep(1000);  //会抛异常的，还是要处理
         });
 
     }
