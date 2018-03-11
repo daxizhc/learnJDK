@@ -18,19 +18,19 @@ public class CharsetTest {
         //            System.out.println(name);
         //        }
 
-        String greeting = "\u03C0 \uD835\uDD6B";
+        String greeting = "\u03C0\uD835\uDD6B";
         System.out.println(greeting);
 
-        //        4个代码单元
+        //        3个代码单元
         int n = greeting.length();
         System.out.println(n);
 
-        //        3个代码点
+        //        2个代码点
         int cpCount = greeting.codePointCount(0, greeting.length());
         System.out.println(cpCount);
 
         //        用字符集编码Java字符串
-        String str = "I";
+        String str = "I";  //此java文件编码为utf8，我们看到的""内的内容，都是utf8解码后产生的
         Charset cset = Charset.forName("ascii");
         ByteBuffer byteBuffer = cset.encode(str);
         byte[] bytes = byteBuffer.array();
@@ -44,6 +44,13 @@ public class CharsetTest {
         byteBuffer = ByteBuffer.wrap(bytes,0,bytes.length);
         CharBuffer charBuffer = cset.decode(byteBuffer);
         System.out.println(charBuffer.toString());
+
+        String a = "知";
+        System.out.println(a.length());
+
+        int 张 = 1;
+        System.out.println(张);
+
 
     }
 
