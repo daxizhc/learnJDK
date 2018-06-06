@@ -10,9 +10,10 @@ public class IOWriter {
 
     public static void main(String[] args) throws FileNotFoundException {
         String dir = System.getProperty("user.dir");
-        PrintWriter out = new PrintWriter(dir + "\\src\\io\\io3.txt");
+        System.out.println(dir);
+        PrintWriter out = new PrintWriter(dir + "/src/main/java/io/io3.txt");
         out.println("test1");
-        out.write("test2");
+        out.write("test3");
         out.close();
 
     }

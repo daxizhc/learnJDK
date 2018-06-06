@@ -14,10 +14,10 @@ public class ObjectStream {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Student s = new Student("zhc",23);
-//        FileOutputStream fout = new FileOutputStream(System.getProperty("user.dir")+"\\src\\io\\object.dat");
-//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fout);
-//        objectOutputStream.writeObject(s);
-//        objectOutputStream.close();
+        FileOutputStream fout = new FileOutputStream(System.getProperty("user.dir")+"\\src\\io\\object.dat");
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fout);
+        objectOutputStream.writeObject(s);
+        objectOutputStream.close();
 
         FileInputStream fin = new FileInputStream(System.getProperty("user.dir")+"\\src\\io\\object.dat");
         ObjectInputStream objectInputStream = new ObjectInputStream(fin);
