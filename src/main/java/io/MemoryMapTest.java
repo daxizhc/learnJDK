@@ -51,8 +51,6 @@ public class MemoryMapTest {
         System.out.println("by inputstream: ");
         System.out.println(crcVale);
         System.out.println(end - start);
-
-
     }
 
 }

@@ -1,6 +1,8 @@
 package io;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystem;
@@ -74,6 +76,7 @@ public class PathTest {
             }
         });
 
+        // zip 文件系统
         Path tmpZip = workPath.resolve("tmp.zip");
         FileSystem fs = FileSystems.newFileSystem(Paths.get(tmpZip.toString()), null);
         Files.walkFileTree(fs.getPath("/"), new SimpleFileVisitor<Path>(){
@@ -83,8 +86,6 @@ public class PathTest {
                 return  FileVisitResult.CONTINUE;
             }
         });
-
-
 
     }
 
