@@ -2,6 +2,7 @@ package socket;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class SocketTest {
@@ -17,7 +18,16 @@ public class SocketTest {
             }
             System.out.println(sb.toString());
         }
-    }
 
+        // 打印主机地址
+        InetAddress localAddress = InetAddress.getLocalHost();
+        System.out.println(localAddress);
+        // 打印所有IP地址
+        InetAddress[] inetAddresses = InetAddress.getAllByName("www.baidu.com");
+        for (InetAddress inetAddress : inetAddresses) {
+            System.out.println(inetAddress);
+        }
+
+    }
 
 }
