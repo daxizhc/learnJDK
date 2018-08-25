@@ -1,5 +1,6 @@
 package persistence;
 
+import java.beans.ConstructorProperties;
 import java.io.Serializable;
 
 public class Student implements Serializable {
