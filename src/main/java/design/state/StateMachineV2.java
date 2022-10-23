@@ -6,9 +6,7 @@ public class StateMachineV2 {
 
     private final IStatus noMoneyStatus;
 
-    private final IStatus hasMoneyStatus;
-
-    private final IStatus sellingStatus;
+    private final IStatus hasMoneyStatus;;
 
     private final IStatus soldOutStatus;
 
@@ -17,7 +15,6 @@ public class StateMachineV2 {
     public StateMachineV2() {
         noMoneyStatus = new NoMoneyStatus(this);
         hasMoneyStatus = new HasMoneyStatus(this);
-        sellingStatus = new SellingStatus(this);
         soldOutStatus = new SoldOutStatus(this);
         setStatus(noMoneyStatus);
     }
@@ -69,10 +66,6 @@ public class StateMachineV2 {
         return hasMoneyStatus;
     }
 
-    public IStatus getSellingStatus() {
-        return sellingStatus;
-    }
-
     public IStatus getSoldOutStatus() {
         return soldOutStatus;
     }
@@ -97,7 +90,6 @@ public class StateMachineV2 {
         System.out.println("==========");
         stateMachineV2.inputMoney();
         stateMachineV2.pushButton();
-
     }
 
 }

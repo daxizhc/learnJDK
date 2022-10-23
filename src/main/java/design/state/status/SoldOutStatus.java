@@ -4,10 +4,7 @@ import design.state.StateMachineV2;
 
 public class SoldOutStatus implements IStatus{
 
-    private StateMachineV2 stateMachineV2;
-
     public SoldOutStatus(StateMachineV2 stateMachineV2) {
-        this.stateMachineV2 = stateMachineV2;
     }
 
     @Override

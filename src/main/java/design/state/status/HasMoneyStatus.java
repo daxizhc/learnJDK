@@ -23,12 +23,17 @@ public class HasMoneyStatus implements IStatus{
 
     @Override
     public void pushButton() {
-         stateMachineV2.setStatus(stateMachineV2.getSellingStatus());
-         stateMachineV2.outputItem();
+        stateMachineV2.outputItem();
     }
 
     @Override
     public void outputItem() {
-        System.out.println("not support output item");
+        System.out.println("output item");
+        stateMachineV2.subtractCount();
+        if (stateMachineV2.getItemCount() > 0) {
+            stateMachineV2.setStatus(stateMachineV2.getNoMoneyStatus());
+        } else {
+            stateMachineV2.setStatus(stateMachineV2.getSoldOutStatus());
+        }
     }
 }
