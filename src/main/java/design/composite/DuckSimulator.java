@@ -9,16 +9,26 @@ public class DuckSimulator {
 
     void simulate() {
         CountingDuckFactory countingDuckFactory = new CountingDuckFactory();
+        Quackologist quackologist = new Quackologist();
+
         Flock flockOfCountingDuck = new Flock();
-        flockOfCountingDuck.addQuackable(countingDuckFactory.createMallardDuck());
-        flockOfCountingDuck.addQuackable(countingDuckFactory.createGooseAdapter());
+        Quackable countingMallardDuck = countingDuckFactory.createMallardDuck();
+        Quackable countingGooseAdapter = countingDuckFactory.createGooseAdapter();
+        flockOfCountingDuck.addQuackable(countingMallardDuck);
+        flockOfCountingDuck.addQuackable(countingGooseAdapter);
+
         simulate(flockOfCountingDuck);
         System.out.println(QuackCounter.getCount());
+        System.out.println("==========================");
 
         DuckFactory duckFactory = new DuckFactory();
         Flock flockOfDuck = new Flock();
-        flockOfDuck.addQuackable(duckFactory.createMallardDuck());
-        flockOfDuck.addQuackable(duckFactory.createGooseAdapter());
+        Quackable mallardDuck = duckFactory.createMallardDuck();
+        Quackable gooseAdapter = duckFactory.createGooseAdapter();
+        mallardDuck.registerObserver(quackologist);
+        gooseAdapter.registerObserver(quackologist);
+        flockOfDuck.addQuackable(mallardDuck);
+        flockOfDuck.addQuackable(gooseAdapter);
         simulate(flockOfDuck);
         System.out.println(QuackCounter.getCount());
 

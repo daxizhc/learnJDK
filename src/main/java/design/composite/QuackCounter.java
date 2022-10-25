@@ -20,4 +20,12 @@ public class QuackCounter implements Quackable {
     public static int getCount() {
         return count;
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+    }
+
+    @Override
+    public void notifyObservers() {
+    }
 }
